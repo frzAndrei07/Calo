@@ -6,3 +6,7 @@
             - Se pide el peso total del plato cocinado, y luego se calculan las calorias por 100g. || Se deja que la ia estime las calorias por 100g del plato cocinado
         
     Para calcular las macros de cada comida, se deja a la ia estimarlo
+
+
+
+    DEV
