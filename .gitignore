@@ -1,2 +1,4 @@
 # Ignore config files
 *.kdbx
+.env
+node_modules

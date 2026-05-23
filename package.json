@@ -1,0 +1,29 @@
+{
+  "name": "calo",
+  "version": "1.0.0",
+  "description": "- Guardar platos enteros de comida, con los pesos de los ingredientes en crudo.\r     Para calcular las calorías de cada comida, tendrías dos opciones:\r         - Introducir las calorias por 100g de cada ingrediente crudo. || - Dejar que la ia calcule las calorias aproximadas\r         - Si es un plato que se consume en varias ocasiones y se necesita el peso por 100g cocinado:\r             - Se pide el peso total del plato cocinado, y luego se calculan las calorias por 100g. || Se deja que la ia estime las calorias por 100g del plato cocinado",
+  "homepage": "https://github.com/frzAndrei07/Calo#readme",
+  "bugs": {
+    "url": "https://github.com/frzAndrei07/Calo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frzAndrei07/Calo.git"
+  },
+  "license": "ISC",
+  "author": "Andrei Friz",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "nodemon": "^3.1.14",
+    "pg": "^8.21.0"
+  }
+}
