@@ -26,6 +26,11 @@ app.use('/api/auth', authApiRoutes);
 
 app.use(express.static('public'));
 
+//404
+app.use((req, res) => {
+    res.status(404).send('404')
+})
+
 app.listen(port, () => {
     console.log(`Server up con port ${port}`)
 });

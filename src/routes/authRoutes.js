@@ -9,6 +9,6 @@ import { verifyToken } from "../middleware/verifyToken.js";
 
 const router = Router();
 
-router.get('/login', c.loginGet);
+router.get('/', c.authGet);
 
 export default router;

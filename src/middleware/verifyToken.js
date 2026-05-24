@@ -1,3 +1,4 @@
+//Dependencies
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import 'dotenv/config';
@@ -8,7 +9,7 @@ export const verifyToken = (req, res, next) => {
     const token = req.cookies.token;
     if (!token) {
         console.log('Redirecting to login')
-        return res.redirect('/auth/login');
+        return res.redirect('/auth');
     } 
     const payload = jwt.verify(token, process.env.JWT_KEY);
     console.log(payload);
