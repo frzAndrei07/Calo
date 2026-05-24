@@ -2,11 +2,11 @@
 
 /* GLOBAL TAGS */
 :root {
-    --primary: #937f71;
+    --primary: #726B68;
     --secondary: #7dc0b5;
     --light: #eeece6;
     --semilight: #e0cfbd;
-    --accent: #b6846a;
+    --accent: #AF806A;
 }
 
 * {
@@ -46,11 +46,15 @@ input:focus {
     margin-top: 20px;
 }
 
+.center {
+    text-align: center;
+}
+
 /* GLOBAL CLASSES */
 .btn {
     border: none;
     background: var(--secondary);
-    padding: 10px;
+    padding: 10px;  
     border-radius: 10px;
     font-size: 1em;
 }

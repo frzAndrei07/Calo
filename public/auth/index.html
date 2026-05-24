@@ -4,33 +4,53 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
         <title>Sign In</title>
 
-        <link rel="stylesheet" href="../shared/shardStyle.css">
-        <link rel="stylesheet" href="../auth/style.css">
+        <link rel="stylesheet" href="/shared/sharedStyle.css">
+        <link rel="stylesheet" href="/auth/style.css">
+
+        <script src="/auth/main.js" defer></script>
     </head>
     <body>
         <main>
             <div id="logoDiv">
-                <h1>Calo</h1>
-                <img src="../assets/logo.png" alt="" id="logo">
+                <img src="../assets/logo-letter.png" alt="" id="logo">
+                <h1>alo</h1>
             </div>
             <section id="siSection">
                 <h2>Sign in</h2>
                 <label for="">
-                    <p>Email</p>
+                    Email
                     <input type="email" name="siEmailInput" id="siEmailInput">
                 </label>
                 <label for="">
-                    <p>Password</p>
+                    Password
                     <input type="text" name="siPwdInput" id="siPwdInput">
                 </label>
                 <button class="btn s20">Sign in</button>
-                <p class="s20">Don´t have an account? <span class="accentText">Sign up</span></p>
+                <p class="center">Don´t have an account? <span class="accentText" id="showsuSection">Sign up</span></p>
             </section>
 
-            <section id="signUpSection">
-
+            <section id="suSection">
+                <h2>Sign up</h2>
+                <label for="">
+                    Username
+                    <input type="email" name="suUsernameInput" id="suUsernameInput">
+                </label>
+                <label for="">
+                    Email
+                    <input type="email" name="suEmailInput" id="suEmailInput">
+                </label>
+                <label for="">
+                    Password
+                    <input type="text" name="suPwdInput" id="suPwdInput">
+                </label>
+                <button class="btn s20">Sign up</button>
+                <p class="center">Already have an account? <span class="accentText" id="showsiSection">Sign in</span></p>
             </section>
         </main>
     </body>
