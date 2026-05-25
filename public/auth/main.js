@@ -34,3 +34,68 @@ showsiSection.addEventListener('click', (e) => {
         switchSection(suSection, siSection);
     }
 });
+
+//Toggle the password input between text and password
+const suEye = document.getElementById('suEye');
+suEye.addEventListener('click', () => {
+    const suPwdInput = document.getElementById('suPwdInput');
+    suEye.textContent = '';
+    if (suPwdInput.type == 'text') {
+        suPwdInput.type = 'password';
+        suEye.innerHTML = `<i class="fa-solid fa-eye" style="color: hsl(18, 5%, 43%);"></i>`;
+    } else {
+        suPwdInput.type = 'text';
+        suEye.innerHTML = `<i class="fa-solid fa-eye-slash" style="color: hsl(18, 5%, 43%);"></i>`; 
+    }
+})
+
+const siEye = document.getElementById('siEye');
+siEye.addEventListener('click', () => {
+    const siPwdInput = document.getElementById('siPwdInput');
+    siEye.textContent = '';
+    if (siPwdInput.type == 'text') {
+        siPwdInput.type = 'password';
+        siEye.innerHTML = `<i class="fa-solid fa-eye" style="color: hsl(18, 5%, 43%);"></i>`;
+    } else {
+        siPwdInput.type = 'text';
+        siEye.innerHTML = `<i class="fa-solid fa-eye-slash" style="color: hsl(18, 5%, 43%);"></i>`; 
+    }
+})
+
+
+const suSubmitBtn = document.getElementById('suSubmitBtn');
+suSubmitBtn.addEventListener('click', async () => {
+    const suUsernameInput = document.getElementById('suUsernameInput');
+    const suPwdInput = document.getElementById('suPwdInput');
+
+    let valid = true;
+
+    if(suUsernameInput.value == '') {
+        valid = false;
+        setTimeout(() => {
+            suUsernameInput.style.outline = '';
+        }, 1000);
+
+        suUsernameInput.style.outline = 'solid 1px red';
+    }
+
+    if(suPwdInput.value == '') {
+        valid = false;
+        setTimeout(() => {
+            suPwdInput.style.outline = '';
+        }, 1000);
+        
+        suPwdInput.style.outline = 'solid 1px red';
+    }
+
+    if (valid) {
+        const res = await fetch('/api/auth/su', {
+            method: 'POST',
+            headers: { 'Content-Type' : 'application/json' },
+            body: JSON.stringify({username: suUsernameInput.value, pwd: suPwdInput.value})
+        });
+    
+        const resData = await res.json();
+        console.log(resData.status)
+    }
+})

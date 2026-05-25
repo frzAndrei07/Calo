@@ -4,11 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-
         <title>Sign In</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">   
 
         <link rel="stylesheet" href="/shared/sharedStyle.css">
         <link rel="stylesheet" href="/auth/style.css">
@@ -17,19 +15,25 @@
     </head>
     <body>
         <main>
-            <div id="logoDiv">
+            <!-- <div id="logoDiv">
                 <img src="../assets/logo-letter.png" alt="" id="logo">
                 <h1>alo</h1>
-            </div>
+            </div> -->
+            <img src="../assets/logo.png" alt="">
             <section id="siSection">
                 <h2>Sign in</h2>
-                <label for="">
-                    Email
-                    <input type="email" name="siEmailInput" id="siEmailInput">
+                <label for="siUsernameInput">
+                    Username
+                    <input type="email" name="siUsernameInput" id="siUsernameInput">
                 </label>
-                <label for="">
+                <label for="siPwdInput" id="siPwdInputLabel">
                     Password
-                    <input type="text" name="siPwdInput" id="siPwdInput">
+                    <div id="siPwdInputDiv">
+                        <input type="password" name="siPwdInput" id="siPwdInput">
+                        <div id="siEye">
+                            <i class="fa-solid fa-eye" style="color: hsl(18, 5%, 43%);"></i>
+                        </div>
+                    </div>
                 </label>
                 <button class="btn s20">Sign in</button>
                 <p class="center">Don´t have an account? <span class="accentText" id="showsuSection">Sign up</span></p>
@@ -37,19 +41,20 @@
 
             <section id="suSection">
                 <h2>Sign up</h2>
-                <label for="">
+                <label for="suUsernameInput">
                     Username
                     <input type="email" name="suUsernameInput" id="suUsernameInput">
                 </label>
-                <label for="">
-                    Email
-                    <input type="email" name="suEmailInput" id="suEmailInput">
-                </label>
-                <label for="">
+                <label for="suPwdInput" id="suPwdInputLabel">
                     Password
-                    <input type="text" name="suPwdInput" id="suPwdInput">
+                    <div id="suPwdInputDiv">
+                        <input type="password" name="suPwdInput" id="suPwdInput">
+                        <div id="suEye">
+                            <i class="fa-solid fa-eye" style="color: hsl(18, 5%, 43%);"></i>
+                        </div>
+                    </div>
                 </label>
-                <button class="btn s20">Sign up</button>
+                <button class="btn s20" id="suSubmitBtn">Sign up</button>
                 <p class="center">Already have an account? <span class="accentText" id="showsiSection">Sign in</span></p>
             </section>
         </main>

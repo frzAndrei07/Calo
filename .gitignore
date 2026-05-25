@@ -2,3 +2,4 @@
 *.kdbx
 .env
 node_modules
+future.md

@@ -7,20 +7,19 @@ import cookieParser from 'cookie-parser';
 import rootRoutes from './src/routes/rootRoutes.js';
 
 import authRoutes from './src/routes/authRoutes.js';
-import authApiRoutes from './src/routes/authApiRoutes.js';
+import authApiRoutes from './src/routes/api/authApiRoutes.js';
 
 //Middleware
 import { verifyToken } from './src/middleware/verifyToken.js';
 
 const app = express();
 const port = process.env.PORT;
+const jwtSecret = process.env.JWT_SECRET;
 
-app.use(cookieParser())
+app.use(cookieParser());
+app.use(express.json());
 
-app.use('/', rootRoutes)
-
-
-
+app.use('/', rootRoutes);
 app.use('/auth', authRoutes);
 app.use('/api/auth', authApiRoutes);
 
@@ -28,9 +27,9 @@ app.use(express.static('public'));
 
 //404
 app.use((req, res) => {
-    res.status(404).send('404')
+    res.status(404).send('404');
 })
 
-app.listen(port, () => {
-    console.log(`Server up con port ${port}`)
+app.listen(port,() => {
+    console.log(`Server up on port ${port}`);
 });
