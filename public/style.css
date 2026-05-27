@@ -1,0 +1,17 @@
+#menuToggleButton {
+    font-size: 30px;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+}
+
+aside {
+    width: 300px;
+}
+
+#menuSection {
+    display: none;
+    width: 300px;
+    height: 100vh;
+    background: var(--accent);
+}

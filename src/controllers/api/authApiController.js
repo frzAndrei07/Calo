@@ -44,14 +44,14 @@ export const siPost = async (req, res) => {
             }
 
             const options = {
-                expiresIn: '30m'
+                expiresIn: '7d'
             }
 
             const token = await jwt.sign(payload, process.env.JWT_SECRET, options);
             
             return res.cookie('token', token, {
                 httpOnly: true, 
-                maxAge: 30 * 60 * 1000
+                maxAge: 7 * 24 * 60 * 60 * 1000
             })
             .status(200).json({});
         } else {
