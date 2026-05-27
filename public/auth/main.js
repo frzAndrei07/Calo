@@ -95,7 +95,69 @@ suSubmitBtn.addEventListener('click', async () => {
             body: JSON.stringify({username: suUsernameInput.value, pwd: suPwdInput.value})
         });
     
-        const resData = await res.json();
-        console.log(resData.status)
+        // const resData = await res.json();
+        if (res.status == 400) {
+            alert('Username taken');
+            return;
+        } else if (res.status == 201) {
+            const res = await fetch('/api/auth/si', {
+                method: 'POST',
+                headers: { 'Content-Type' : 'application/json' },
+                body: JSON.stringify({username: suUsernameInput.value, pwd: suPwdInput.value})
+            });
+            if (res.status == (200)) {
+                window.location.href = '/';
+            } else {
+                alert('Error during sign in')
+            }
+        } else {
+            alert('Server error');
+        }
     }
+})
+
+const siSubmitBtn = document.getElementById('siSubmitBtn');
+siSubmitBtn.addEventListener('click', async () => {
+    const siUsernameInput = document.getElementById('siUsernameInput');
+    const siPwdInput = document.getElementById('siPwdInput');
+
+    let valid = true;
+
+    if(siUsernameInput.value == '') {
+        valid = false;
+        setTimeout(() => {
+            siUsernameInput.style.outline = '';
+        }, 1000);
+
+        siUsernameInput.style.outline = 'solid 1px red';
+    }
+
+    if(siPwdInput.value == '') {
+        valid = false;
+        setTimeout(() => {
+            siPwdInput.style.outline = '';
+        }, 1000);
+        
+        siPwdInput.style.outline = 'solid 1px red';
+    }
+
+    if (valid) {
+        const res = await fetch('/api/auth/si', {
+            method: 'POST',
+            headers: { 'Content-Type' : 'application/json' },
+            body: JSON.stringify({username: siUsernameInput.value, pwd: siPwdInput.value})
+        });
+
+        if (res.status == 404) {
+            alert('User not found');
+        } else if (res.status == 401) {
+            alert('Wrong password');
+        } else if (res.status == 200) {
+            window.location.href = '/';
+        } else {
+            alert('Server error');
+        }
+        
+    }
+
 })

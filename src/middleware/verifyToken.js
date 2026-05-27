@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import 'dotenv/config';
 import path from 'path';
 
-export const verifyToken = (req, res, next) => {
+export const verifyToken = async (req, res, next) => {
     try {
         console.log('Verifying token');
     
@@ -14,8 +14,7 @@ export const verifyToken = (req, res, next) => {
             throw new Error('No token found')
         } 
     
-        const payload = jwt.verify(token, process.env.JWT_KEY);
-        console.log(payload);
+        const payload = await jwt.verify(token, process.env.JWT_SECRET);
         next();
     } catch (err) {
         console.error(err.message)
