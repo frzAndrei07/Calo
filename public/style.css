@@ -13,6 +13,11 @@ li {
     font-weight: bold;
 }
 
+.btn {
+    border: none;
+}
+
+/* MENU */
 #menuToggleButton {
     font-size: 30px;
     position: fixed;
@@ -31,6 +36,15 @@ li {
     z-index: 2;
 }
 
+.active {
+    display: block !important;
+}
+
+#mealsSection, #ingredientsSection {
+    display: none;
+}
+
+/* MEALS SECTION */
 #dateFilter {
     display: flex;
     justify-content: center;
@@ -45,4 +59,65 @@ li {
     padding: 5px;
     border-radius: 10px;
     border: solid 2px var(--primary);
+}
+
+/* DISHES SECTION */
+
+/* INGREDIENTS SECTION */
+#ingredientsContainer {
+    width: 100%;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+
+#ingredientsList {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+#ingredientCard {
+    width: 80%;
+    height: fit-content;
+    border: solid 2px var(--primary);
+    border-radius: 10px;
+    padding: 5px;
+    background-color: var(--semilight);
+}
+
+#ingredientMacros > h4 > span {
+    color: var(--accent);
+    margin-right: 4px;
+}
+
+#ingredientName, #ingredientMacros {
+    display: flex;
+    align-items: center;
+}
+
+#ingredientName {
+    justify-content: space-between;
+    gap: 5px;
+}
+
+#ingredientName > h3 {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#ingredientMacros {
+    /* justify-content: center; */
+}
+
+#ingredientBtns {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }

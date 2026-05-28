@@ -2,7 +2,7 @@
 import { render } from './render.js';
 
 const app = {
-    'view': 'meals',
+    'view': 'ingredients',
     'date': ''
 } 
 
