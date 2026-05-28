@@ -1,17 +1,48 @@
+aside {
+    width: 300px;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    padding-top: 10px;
+}
+
+li {
+    font-size: 30px;
+    font-weight: bold;
+}
+
 #menuToggleButton {
     font-size: 30px;
     position: fixed;
     left: 10px;
     top: 10px;
-}
-
-aside {
-    width: 300px;
+    z-index: 5;
 }
 
 #menuSection {
+    position: absolute;
     display: none;
     width: 300px;
     height: 100vh;
     background: var(--accent);
+    padding: 40px 0 0 10px;
+    z-index: 2;
+}
+
+#dateFilter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#dateFilter > i {
+    font-size: 30px;
+}
+
+#dateInput {
+    padding: 5px;
+    border-radius: 10px;
+    border: solid 2px var(--primary);
 }
