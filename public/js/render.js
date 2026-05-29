@@ -1,5 +1,6 @@
 //Import utils
 import * as f from './renderFunc.js';
+import { renderIngredients } from './views/ingredients.js';
 
 //General render function, managing all the rendering
 export const render = (view, args) => {
@@ -13,7 +14,7 @@ export const render = (view, args) => {
             break;
 
         case 'ingredients':
-            renderIngredients();
+            renderIngredients(f);
             break;
 
         default: 
@@ -28,27 +29,4 @@ const renderMeals = async (date) => {
 
 const renderDishes = async () => {
     console.log('Rendering dishes')
-}
-
-const renderIngredients = async () => {
-    console.log('Rendering ingredients');
-
-    //Shows ingredients section
-    f.activateSection('ingredientsSection');
-    
-    //Import all the user´s ingredients
-    const res = await fetch(`/api/getIngredients`);
-
-    if (res.status != 200) {
-        alert('Error getting ingredients');
-        return;
-    }
-
-    const resData = await res.json();
-
-    //Button to add ingredients
-    const addIngredientBtn = document.getElementById('addIngredientBtn');
-    addIngredientBtn.addEventListener('click', (e) => {
-        console.log('Adding ingredient');
-    })
 }

@@ -27,6 +27,10 @@ h2 {
     font-size: 2em;
 }
 
+h4 {
+    font-size: 0.9em;
+}
+
 p {
     font-size: 0.8em;
 }
@@ -59,9 +63,13 @@ input:focus {
     padding: 10px;
     border-radius: 10px;
     font-size: 1em;
-    aspect-ratio: 1 / 1;
+    /* aspect-ratio: 1 / 1;
     min-width: 44px;
-    min-height: 44px;
+    min-height: 44px; */
+}
+
+.btnGray {
+    background: lightgray !important;
 }
 
 .accentText {

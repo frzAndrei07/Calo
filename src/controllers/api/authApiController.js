@@ -47,7 +47,7 @@ export const siPost = async (req, res) => {
                 expiresIn: '7d'
             }
 
-            const token = await jwt.sign(payload, process.env.JWT_SECRET, options);
+            const token = jwt.sign(payload, process.env.JWT_SECRET, options);
             
             return res.cookie('token', token, {
                 httpOnly: true, 
